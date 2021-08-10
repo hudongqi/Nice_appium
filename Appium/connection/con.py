@@ -1,7 +1,8 @@
 from time import sleep
 from appium import webdriver
-import unittest
+from Base import excel
 from Base import tools
+
 
 desired_caps = {}
 desired_caps['platformName'] = 'iOS'
@@ -96,6 +97,7 @@ class register_login():
         driver.find_element_by_ios_predicate('label == "下一步"').click()
         sleep(2)
         print(self.mob)
+        excel.HandExcel().edit(self.mob)
 
     def log_out(self):
 
